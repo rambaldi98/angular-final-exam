@@ -1,0 +1,15 @@
+<div class="col-md-6 offset-md-3">
+    <h1>Chi tiết sách</h1>
+    <button style="float: right" class="btn btn-success" routerLink='/listBook'>Xem danh sách</button>
+    <dl class="row">
+      <dt class="col-sm-3">Tên sách</dt>
+      <dd class="col-sm-9">{{book.title}}</dd>
+  
+      <dt class="col-sm-3">Tác giả</dt>
+      <dd class="col-sm-9">
+        <p>{{book.author}}</p>
+      </dd>
+      <dt class="col-sm-3">Mô tả</dt>
+      <dd class="col-sm-9">{{book.description}}</dd>
+    </dl>
+  </div>

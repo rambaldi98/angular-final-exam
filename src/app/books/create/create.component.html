@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <h1 align="center">Thêm sách mới</h1>
+    <div class="col-md-6 offset-md-3">
+  
+      <form [formGroup]="createForm" (ngSubmit)="createBook()" >
+        <div class="form-group">
+          <label for="exampleInputTitle">Tên</label>
+          <input type="text" formControlName="title" class="form-control" id="exampleInputTitle" required >
+          <br>
+          <span *ngIf="createForm.controls.title.invalid" class="text-danger">*Cần phải nhập tên</span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputAuthor">Tác giả</label>
+          <input type="text" formControlName="author" class="form-control" id="exampleInputAuthor" required >
+          <br>
+          <span *ngIf="createForm.controls.author.invalid" class="text-danger">*Cần phải nhập tác giả</span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputDescription">Mô tả</label>
+          <textarea type="text"  formControlName="description" class="form-control" id="exampleInputDescription"></textarea>
+        </div>
+        <br>
+        <!-- <div class="row"> -->
+          <button  type="submit" class="btn btn-primary" style="margin-right: 10px" *ngIf="createForm" [disabled]="!createForm.dirty || (createForm.dirty&& createForm.invalid) " >Thêm sách</button>
+          <button class="btn btn-success" routerLink='/listBook' style="margin-left: 80%;">Thoát</button>
+        <!-- </div> -->
+  
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <h1 align="center">Cập nhật sách</h1>
+    <div class="col-md-6 offset-md-3">
+      <form *ngIf="updateForm" [formGroup]="updateForm" (ngSubmit)="updateBook()" >
+        <div class="form-group">
+          <label>Tên</label>
+          <input type="text" formControlName="title" class="form-control" value="{{book.title}}" required >
+          <span *ngIf="updateForm.controls.title.invalid" class="text-danger">Cần phải nhập tên</span>
+        </div>
+        <div class="form-group">
+          <label>Tác giả</label>
+          <input type="email" formControlName="author" class="form-control" value="{{book.author}}" required>
+          <span *ngIf="updateForm.controls.author.invalid" class="text-danger">Cần phải nhập tác giả</span>
+        </div>
+        <div class="form-group">
+          <label>Mô tả</label>
+          <textarea type="text"  formControlName="description" class="form-control"  value="{{book.description}}"></textarea>
+        </div>
+        <!-- <div class="row" align="center"> -->
+          <br>
+          <br>
+          <button type="submit" class="btn btn-primary" style="margin-right: 10px">Cập nhật</button>
+          <button class="btn btn-success" routerLink='/listBook' style="margin-left: 80%;">Thoát</button>
+        <!-- </div> -->
+      </form>
+    </div>
+  </div>
+
